@@ -1,0 +1,12 @@
+//Use the Factory to Get the Object in Client Code
+//The Factory Pattern is widely used in frameworks like Java’s Collection Framework (List, Set, etc.),
+// where factory methods like List.of() or Set.of() return appropriate concrete implementations based on input.
+
+//Spring uses the Factory pattern to create beans through @Bean methods in configuration classes or with @Component,
+// @Service, etc., annotations.
+//Example: The BeanFactory and ApplicationContext in Spring are examples of factory pattern implementations
+// that create and manage beans.
+
+advantages
+1) focus on creating object for interface rather than implementation
+2) loose coupling more robust code

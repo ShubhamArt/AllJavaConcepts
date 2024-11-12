@@ -1,0 +1,19 @@
+Channel Interface (Subject):
+
+Declares methods to subscribe(), unsubscribe(), and notifySubscribers().
+YouTubeChannel (Concrete Subject):
+
+Maintains a list of Subscriber objects.
+The uploadVideo() method updates the latest video and calls notifySubscribers().
+The notifySubscribers() method iterates over each subscriber and calls update() on them.
+Subscriber Interface (Observer):
+
+Declares the update() method, which will be called when there’s a new video.
+Also includes a getName() method to identify the subscriber.
+YouTubeSubscriber (Concrete Observer):
+
+Implements update(), printing a message when notified of a new video.
+ObserverPatternDemo (Client):
+
+Creates a YouTubeChannel and several YouTubeSubscriber instances.
+Adds subscribers to the channel, uploads videos, and demonstrates notifications being sent.

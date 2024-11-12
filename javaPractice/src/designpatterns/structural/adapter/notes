@@ -1,0 +1,18 @@
+AppleCharger Interface:
+
+Represents the target interface with the chargeWithLightning() method, which is required by the Apple phone.
+AndroidCharger Class:
+
+The Android charger has a chargeWithUSB() method which is incompatible with the Apple phone’s expected charging interface.
+AndroidToAppleChargerAdapter:
+
+This adapter class implements the AppleCharger interface.
+Inside chargeWithLightning(), it adapts by calling chargeWithUSB() on the AndroidCharger instance, allowing an Apple phone to charge with an Android charger through the adapter.
+ApplePhone Class:
+
+This is the client that needs to charge an Apple phone with a chargeWithLightning() method.
+By using the adapter (AndroidToAppleChargerAdapter), it can charge using an Android charger.
+Demo:
+
+In the AdapterPatternDemo main method, we create an AndroidCharger, then wrap it with the AndroidToAppleChargerAdapter.
+The ApplePhone is able to charge using the Android charger via the adapter.
