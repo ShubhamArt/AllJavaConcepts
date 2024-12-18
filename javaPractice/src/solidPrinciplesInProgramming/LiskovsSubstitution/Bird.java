@@ -1,5 +1,2 @@
-package solidPrinciplesInProgramming.LiskovsSubstitution;
-
-public abstract class Bird {
-    public abstract void move();
+package solidPrinciplesInProgramming.LiskovsSubstitution;public class Bird {
 }

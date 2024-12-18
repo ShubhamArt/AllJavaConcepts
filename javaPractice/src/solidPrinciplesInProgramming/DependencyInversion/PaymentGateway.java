@@ -1,5 +1,2 @@
-package solidPrinciplesInProgramming.DependencyInversion;
-
-public interface PaymentGateway {
-    void charge(double amount);
+package solidPrinciplesInProgramming.DependencyInversion;public interface PaymentGateway {
 }

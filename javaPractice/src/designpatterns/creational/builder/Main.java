@@ -6,6 +6,8 @@ public class Main {
         Home luxuryHome = new Home.HomeBuilder("Brick Walls", "Tile Roof")
                 .setPool(true)
                 .setGarden(true)
+                .setGarage(true)
+                .setNumberOfFloors(3)
                 .build();
 
         System.out.println(luxuryHome);
@@ -19,6 +21,7 @@ public class Main {
         // Build a home with some optional features
         Home familyHome = new Home.HomeBuilder("Concrete Walls", "Metal Roof")
                 .setGarden(true)
+                .setNumberOfFloors(2)
                 .build();
 
         System.out.println(familyHome);

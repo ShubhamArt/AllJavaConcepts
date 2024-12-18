@@ -1,8 +1,2 @@
-package defaultandStaticMethodJava8;
-
-public class Cat implements Animal{
-    @Override
-    public void makeSound() {
-        System.out.println("Mow");
-    }
+package defaultandStaticMethodJava8;public class Cat {
 }

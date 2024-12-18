@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.OptionalInt;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class StringToInteger {
@@ -32,14 +31,6 @@ public class StringToInteger {
         boolean first = str1.chars().filter(c -> c == 'w').findFirst().isPresent();
         System.out.println("count = "+Stream.of(str1).filter(c->c.contains("w")).count());
         System.out.println(first);
-
-        //find index of first occurance of r
-        int index = IntStream.range(0, str.length())
-                .filter(i -> str.charAt(i) == 'r')
-                .findFirst()
-                .orElse(-1);  // -1 will be returned if 'r' is not found
-
-        System.out.println("Index of first occurrence of 'r': " + index);
     }
 }
 

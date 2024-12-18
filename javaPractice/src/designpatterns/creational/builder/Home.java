@@ -8,7 +8,8 @@ public class Home {
     // Optional parameters
     private final boolean hasPool;
     private final boolean hasGarden;
-
+    private final boolean hasGarage;
+    private final int numberOfFloors;
 
     // Private constructor that only the builder can access
     private Home(HomeBuilder builder) {
@@ -16,7 +17,8 @@ public class Home {
         this.roof = builder.roof;
         this.hasPool = builder.hasPool;
         this.hasGarden = builder.hasGarden;
-
+        this.hasGarage = builder.hasGarage;
+        this.numberOfFloors = builder.numberOfFloors;
     }
 
     // Getters for the fields
@@ -36,14 +38,19 @@ public class Home {
         return hasGarden;
     }
 
+    public boolean hasGarage() {
+        return hasGarage;
+    }
+
+    public int getNumberOfFloors() {
+        return numberOfFloors;
+    }
+
     @Override
     public String toString() {
-        return "Home{" +
-                "walls='" + walls + '\'' +
-                ", roof='" + roof + '\'' +
-                ", hasPool=" + hasPool +
-                ", hasGarden=" + hasGarden +
-                '}';
+        return "Home [walls=" + walls + ", roof=" + roof +
+                ", pool=" + hasPool + ", garden=" + hasGarden +
+                ", garage=" + hasGarage + ", floors=" + numberOfFloors + "]";
     }
 
     // Static inner Builder class
@@ -55,7 +62,8 @@ public class Home {
         // Optional parameters with default values
         private boolean hasPool = false;
         private boolean hasGarden = false;
-
+        private boolean hasGarage = false;
+        private int numberOfFloors = 1; // Default is 1 floor
 
         // Constructor for required parameters
         public HomeBuilder(String walls, String roof) {
@@ -74,6 +82,15 @@ public class Home {
             return this;
         }
 
+        public HomeBuilder setGarage(boolean hasGarage) {
+            this.hasGarage = hasGarage;
+            return this;
+        }
+
+        public HomeBuilder setNumberOfFloors(int numberOfFloors) {
+            this.numberOfFloors = numberOfFloors;
+            return this;
+        }
 
         // Build method to create the Home object
         public Home build() {
