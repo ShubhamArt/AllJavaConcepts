@@ -6,16 +6,11 @@ package designpatterns.creational.singleton;
 // changed using setter methods.
 public class Animal {
     // Volatile instance to ensure visibility in multithreaded environments
-    private static volatile Animal instance;
-
-    // Private fields for Animal properties (e.g., species and name)
-    private String species;
-    private String name;
+    private static Animal instance;
 
     // Private constructor to prevent instantiation from outside
     private Animal() {
-        this.species = "Lion"; // Default species
-        this.name = "Simba";   // Default name
+
     }
 
     // Public method to provide access to the single instance
@@ -30,27 +25,7 @@ public class Animal {
         return instance;
     }
 
-    // Getter and Setter methods for properties
-    public String getSpecies() {
-        return species;
-    }
 
-    public void setSpecies(String species) {
-        this.species = species;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    // Example method to demonstrate functionality
-    public void makeSound() {
-        System.out.println(name + " the " + species + " says: Roar!");
-    }
 }
 
 

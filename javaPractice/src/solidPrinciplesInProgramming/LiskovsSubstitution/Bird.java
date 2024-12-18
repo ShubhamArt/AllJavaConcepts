@@ -1,2 +1,5 @@
-package solidPrinciplesInProgramming.LiskovsSubstitution;public class Bird {
+package solidPrinciplesInProgramming.LiskovsSubstitution;
+
+public abstract class Bird {
+    public abstract void fly();
 }
