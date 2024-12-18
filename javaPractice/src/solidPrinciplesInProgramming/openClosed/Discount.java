@@ -1,2 +1,5 @@
-package solidPrinciplesInProgramming.openClosed;public class Discount {
+package solidPrinciplesInProgramming.openClosed;
+
+public abstract class Discount {
+    public abstract double apply(double price);
 }

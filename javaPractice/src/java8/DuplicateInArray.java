@@ -14,11 +14,18 @@ public class DuplicateInArray {
         List<Integer> ans = list.stream().filter(n -> Collections.frequency(list, n) > 1).distinct().toList();
         System.out.println("Duplicate Using Frequency " + ans);
 
-        List<Integer> collect = Arrays.stream(arr).boxed().collect(Collectors.groupingBy(n -> n, Collectors.counting())).entrySet().stream().
+        System.out.println("how many times Element present "+Arrays.stream(arr).boxed().
+                collect(Collectors.groupingBy(n -> n,
+                Collectors.counting())));
+
+
+        List<Integer> collect = Arrays.stream(arr).boxed().collect(Collectors.groupingBy(n -> n,
+                        Collectors.counting())).entrySet().stream().
                 filter(x -> x.getValue() > 1).map(Map.Entry::getKey).collect(Collectors.toList());
         System.out.println(collect);
 
-        List<Integer> duplicateElement = list.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+        List<Integer> duplicateElement = list.stream().collect(Collectors.groupingBy(Function.identity(),
+                        Collectors.counting()))
                 .entrySet().stream().filter(e -> e.getValue() > 1).map(Map.Entry::getKey).toList();
         System.out.println("Duplicate using grouping by "+duplicateElement);
     }

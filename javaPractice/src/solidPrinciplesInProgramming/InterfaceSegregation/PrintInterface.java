@@ -1,2 +1,5 @@
-package solidPrinciplesInProgramming.InterfaceSegregation;public interface PrintInterface {
+package solidPrinciplesInProgramming.InterfaceSegregation;
+
+public interface PrintInterface {
+    void printColor();
 }

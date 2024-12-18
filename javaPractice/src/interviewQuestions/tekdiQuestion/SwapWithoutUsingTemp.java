@@ -1,4 +1,4 @@
-package tekdiQuestion;
+package interviewQuestions.tekdiQuestion;
 
 public class SwapWithoutUsingTemp {
     public static void main(String[] args) {

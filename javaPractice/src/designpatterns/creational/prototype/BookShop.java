@@ -24,16 +24,7 @@ public class BookShop implements Cloneable {
         this.books = books;
     }
 
-    //imagine data comes from database . so for demo purpose i am adding data here manually
-    public void loadData() {
 
-        for (int i = 1; i <= 5; i++) {
-            Book b = new Book();
-            b.setBid(i);
-            b.setbName("Book " + i);
-            getBooks().add(b);
-        }
-    }
 
     @Override
     public String toString() {
@@ -42,7 +33,15 @@ public class BookShop implements Cloneable {
                 ", books=" + books +
                 '}';
     }
-
+    //imagine data comes from database . so for demo purpose i am adding data here manually
+    public void loadData() {
+        for (int i = 1; i <= 5; i++) {
+            Book b = new Book();
+            b.setBid(i);
+            b.setbName("Book " + i);
+            getBooks().add(b);
+        }
+    }
     //this is shallow cloning
    /* @Override
     protected Object clone() throws CloneNotSupportedException {

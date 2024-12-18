@@ -1,2 +1,6 @@
-package FunctionalInterfaceExampleImpl;public interface Square {
+package FunctionalInterfaceExampleImpl;
+
+@FunctionalInterface
+public interface Square {
+    int calculate(int x);
 }

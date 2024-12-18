@@ -9,6 +9,7 @@ public class W3School {
 
         //1. Write a Java program to calculate the average of a list of integers using streams.
         List<Integer> nums = Arrays.asList(2, 4, 5, 6, 4,6,2, 7, 8, 9);
+        //System.out.println(nums.stream().mapToDouble(n->n).average().orElse(0.0));
         Double avg = nums.stream().mapToDouble(Integer::doubleValue).average().orElse(0.0);
         System.out.println("Average of integers " + avg);
 
@@ -43,6 +44,8 @@ public class W3School {
         System.out.println(uniqueNumbrUsingFreq);
 
         //8.Write a Java program to find the maximum and minimum values in a list of integers using streams.
+        //System.out.println("max = "+nums1.stream().max(Comparator.comparing(Integer::intValue)).get());
+        //System.out.println("min = "+nums1.stream().min(Comparator.comparing(Integer::intValue)).get());
         Integer maxValue = nums.stream().max(Integer::compare).orElse(null);
         System.out.println("min = "+nums.stream().sorted().findFirst().get());
         System.out.println(maxValue);
@@ -60,7 +63,7 @@ public class W3School {
         //Get count, min, max, sum, and the average for numbers
 
         List<Integer> primes = Arrays.asList(2, 3, 5, 7, 11, 13, 17, 19, 23, 29);
-        IntSummaryStatistics stats = primes.stream() .mapToInt((x) -> x) .summaryStatistics();
+        IntSummaryStatistics stats = primes.stream().mapToInt((x) -> x) .summaryStatistics();
         System.out.println(stats);
     }
 }

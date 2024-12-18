@@ -94,5 +94,19 @@ public class java8Practice {
         System.out.println(res);
 
 
+        List<Integer> numsList = Arrays.asList(1,2,4,6,8,9);
+
+        System.out.println("intermediate and terminal operation sum "+numsList.stream().filter(n->n%2==0).map(n->n*2).reduce(0,Integer::sum));
+
+        System.out.println("sum by parallel stream "+numsList.parallelStream().mapToInt(Integer::intValue).sum());
+
+        List<List<Integer>> nestedList = Arrays.asList(
+                Arrays.asList(1,2),
+                Arrays.asList(3,4),
+                Arrays.asList(5,6)
+        );
+
+        System.out.println("flattenedList "+nestedList.stream().flatMap(Collection::stream).toList());
+
     }
 }
