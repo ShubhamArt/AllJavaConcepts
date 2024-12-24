@@ -6,7 +6,7 @@ package designpatterns.creational.singleton;
 // changed using setter methods.
 public class Animal {
     // Volatile instance to ensure visibility in multithreaded environments
-    private static Animal instance;
+    private static volatile Animal instance;
 
     // Private constructor to prevent instantiation from outside
     private Animal() {
