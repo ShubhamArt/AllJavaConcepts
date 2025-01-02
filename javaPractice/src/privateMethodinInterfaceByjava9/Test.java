@@ -5,5 +5,7 @@ public class Test implements Calculator {
         Test obj = new Test();
         obj.method1();  // Calls the first default method
         obj.method2();  // Calls the second default method
+
+
     }
 }

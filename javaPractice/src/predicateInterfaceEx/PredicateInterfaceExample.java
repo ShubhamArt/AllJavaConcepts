@@ -1,8 +1,9 @@
-package java8;
+package predicateInterfaceEx;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class PredicateInterfaceExample {
     public static void main(String[] args) {
@@ -13,6 +14,8 @@ public class PredicateInterfaceExample {
 
         // Predicate to check if a number is greater than 20
         Predicate<Integer> isGreaterThan20 = num -> num > 20;
+
+        System.out.println("Even numbers "+numbers.stream().filter(isEven).toList());
 
         // Filter numbers using both predicates
         List<Integer> evenNumbers = filterNumbers(numbers, isEven);
