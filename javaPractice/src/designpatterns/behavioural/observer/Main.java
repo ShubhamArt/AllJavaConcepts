@@ -2,24 +2,24 @@ package designpatterns.behavioural.observer;
 
 public class Main {
     public static void main(String[] args) {
-        // Create YouTube channel
-        YouTubeChannel techChannel = new YouTubeChannel("TechExplained");
+        // Create a stock price (subject)
+        StockPrice stockPrice = new StockPrice();
 
-        // Create subscribers
-        Subscriber alice = new YouTubeSubscriber("Alice");
-        Subscriber bob = new YouTubeSubscriber("Bob");
+        // Create some users (observers)
+        User user1 = new User("John");
+        User user2 = new User("Alice");
 
-        // Subscribe to the channel
-        techChannel.subscribe(alice);
-        techChannel.subscribe(bob);
+        // Register the users as observers of the stock price
+        stockPrice.registerObserver(user1);
+        stockPrice.registerObserver(user2);
 
-        // Upload a new video
-        techChannel.uploadVideo("Observer Pattern in Java");
+        // Change the stock price, this should notify both users
+        stockPrice.setPrice(150.75); // Both users should be notified
 
-        // Unsubscribe a user
-        techChannel.unsubscribe(bob);
+        // Unregister one user
+        stockPrice.removeObserver(user1);
 
-        // Upload another video
-        techChannel.uploadVideo("Adapter Pattern in Java");
+        // Change the stock price again, only Alice should be notified
+        stockPrice.setPrice(160.00);
     }
 }

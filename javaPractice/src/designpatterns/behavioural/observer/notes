@@ -1,19 +1,22 @@
-Channel Interface (Subject):
+Explanation of the Code:
 
-Declares methods to subscribe(), unsubscribe(), and notifySubscribers().
-YouTubeChannel (Concrete Subject):
+The StockPrice class is the subject. It maintains the state of the stock price and notifies its observers whenever the price changes.
+The User class is an observer. Each user subscribes to receive notifications about changes in the stock price.
+When the stock price changes (via setPrice()), the notifyObservers() method is called, which triggers the update() method in each observer.
 
-Maintains a list of Subscriber objects.
-The uploadVideo() method updates the latest video and calls notifySubscribers().
-The notifySubscribers() method iterates over each subscriber and calls update() on them.
-Subscriber Interface (Observer):
+Benefits of the Observer Pattern:
 
-Declares the update() method, which will be called when there’s a new video.
-Also includes a getName() method to identify the subscriber.
-YouTubeSubscriber (Concrete Observer):
+Decoupling: The subject (StockPrice) does not need to know the specific details about its observers (users). It just knows that it needs to notify them when a change occurs.
+Flexibility: You can easily add or remove observers without modifying the subject.
+Real-time Updates: This pattern is ideal for real-time notification systems where users or components need to be updated as soon as data changes.
 
-Implements update(), printing a message when notified of a new video.
-ObserverPatternDemo (Client):
+Use Cases:
 
-Creates a YouTubeChannel and several YouTubeSubscriber instances.
-Adds subscribers to the channel, uploads videos, and demonstrates notifications being sent.
+Stock price updates (as shown in the example).
+Event-driven systems where UI components need to be updated when backend data changes (e.g., chat applications, real-time dashboards).
+Notifications in applications (e.g., email or push notifications when a user’s profile is updated).
+
+Considerations:
+
+If the number of observers grows very large, the performance might degrade, especially if notifications are frequent.
+If observers perform expensive operations upon receiving updates, it could impact system performance, so asynchronous handling might be necessary in such cases.

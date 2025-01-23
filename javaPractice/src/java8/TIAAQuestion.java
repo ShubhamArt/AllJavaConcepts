@@ -12,7 +12,7 @@ public class TIAAQuestion {
         Map<Integer, Long> frequencyMap = Arrays.stream(arr).boxed().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
         System.out.println(frequencyMap);
 
-        int freq=1;
+
         Map<Integer, Integer> map = new HashMap<>();
         for (int num:arr) {
                     map.put(num, map.getOrDefault(num, 0) + 1);

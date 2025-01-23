@@ -6,7 +6,13 @@ import java.util.stream.Stream;
 
 public class CapgeminiQuetion {
     public static void main(String[] args) {
+        String[] strItems = {"apple", "apple", "banana","apple", "orange", "banana", "papaya"};
+
+        System.out.println(Arrays.stream(strItems).filter(i->Collections.frequency(List.of(strItems),i)>1).distinct().collect(Collectors.toList()));
+
         List<String> items = Arrays.asList("apple", "apple", "banana","apple", "orange", "banana", "papaya");
+
+
 
         //find duplicate strings
         List<String> duplicateItems = items.stream().filter(x-> Collections.frequency(items,x)>1).distinct().collect(Collectors.toList());
@@ -29,6 +35,8 @@ public class CapgeminiQuetion {
 
         //filter the list to only include fruits that start with the letter "a"?
         List<String> startsByA = items.stream().filter(x -> x.toLowerCase().startsWith("a")).collect(Collectors.toList());
+        System.out.println(items.stream().filter(x -> x.length() > 0 && x.substring(0, 1).equalsIgnoreCase("a"))  // Case-insensitive check on first character
+                .collect(Collectors.toList()));
         System.out.println(startsByA);
 
         //sort the list of fruits alphabetically

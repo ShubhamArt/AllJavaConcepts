@@ -1,27 +1,12 @@
-import java.util.Arrays;
-import java.util.Objects;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Prac {
     public static void main(String[] args) {
-        int[] arr ={3,-4,5,4,-1,7,-8};
-        int maxSum=Integer.MIN_VALUE;
-        int currSum=0,start=0,end=0,tempStart=0;
-        for(int i=0;i<arr.length;i++){
-            currSum =currSum+arr[i];
-            if(currSum>maxSum){
-                start=tempStart;
-                end=i;
-                maxSum=currSum;
-            }
-            if(currSum<0){
-                currSum=0;
-                tempStart=i+1;
-            }
+        String[] items = {"apple", "apple", "banana","apple", "orange", "banana", "papaya"};
 
-        }
-        System.out.println("maximum sum "+maxSum);
-        for(int i=start;i<end;i++){
-            System.out.println(i+"--->"+arr[i]);
-        }
+        System.out.println(Arrays.stream(items).filter(i->Collections.frequency(List.of(items),i)>1).distinct().collect(Collectors.toList()));
+
+
     }
 }
