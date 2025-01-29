@@ -96,7 +96,7 @@ public class java8Practice {
        //find numbers starts with 1
         List<Integer> list1 = Arrays.asList(11,2,13,4,36,26);
 
-        System.out.println("Numbers starts with 1 "+list1.stream().filter(n->n.toString().startsWith("1")).toList());
+        System.out.println("Numbers starts with 1 " + list1.stream().filter(n->n.toString().startsWith("1")).toList());
 
 
     }
