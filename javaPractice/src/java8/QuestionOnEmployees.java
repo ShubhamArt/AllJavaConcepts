@@ -72,5 +72,10 @@ public class QuestionOnEmployees {
         List<Employee> filteredEmpl = employees1.stream().filter(e -> e.getCity().equalsIgnoreCase("pune")).sorted(Comparator.comparing(Employee::getName)
                 .thenComparing(Employee::getGender).reversed()).collect(Collectors.toList());
         System.out.println(filteredEmpl);
+
+        //Get highest paid male emp from each dept
+        employees1.stream().filter(e -> e.getGender().equalsIgnoreCase("male"))
+                .collect(Collectors.groupingBy(Employee::getDepartment, Collectors.maxBy(Comparator.comparing(Employee::getSalary))))
+                .forEach((department, employee) -> employee.ifPresent(e -> System.out.println("department :" + e.getDepartment() + " employee : " + e.getName() + " salary : " + e.getSalary())));
     }
 }
