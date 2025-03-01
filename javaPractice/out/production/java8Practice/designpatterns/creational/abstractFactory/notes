@@ -1,4 +1,7 @@
-Factory Pattern: Used to create one type of product or related products based on certain parameters or
+Factory Pattern:
+Used to create one type of product or related products based on certain parameters or
 conditions. It defines an interface for creating an object but lets subclasses decide which class to instantiate.
-Abstract Factory Pattern: Used to create families of related or dependent objects. It provides an
+
+Abstract Factory Pattern:
+Used to create families of related or dependent objects. It provides an
 interface to create related objects without specifying their concrete classes.

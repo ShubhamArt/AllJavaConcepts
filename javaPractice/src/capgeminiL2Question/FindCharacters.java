@@ -13,6 +13,7 @@ public class FindCharacters {
         List<String> alphabetSequences = Arrays.stream(str.split("\\d+")) // Split by digits
                 .filter(s -> !s.isEmpty()) // Remove any empty strings
                 .toList();
+        System.out.println(alphabetSequences);
 
         // Print the 3rd and 4th alphabetic sequences ("gh" and "ij")
         if (alphabetSequences.size() >= 4) {
