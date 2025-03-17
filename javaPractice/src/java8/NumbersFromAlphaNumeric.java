@@ -13,9 +13,14 @@ public class NumbersFromAlphaNumeric {
         System.out.println(onlyNumbers);
 
         //print only characters from alphanumeric char array
-        Arrays.stream(alphaNumericArray).filter(Character::isAlphabetic).collect(Collectors.toList()).forEach(System.out::println);
+        Arrays.stream(alphaNumericArray).filter(Character::isAlphabetic).toList().forEach(System.out::println);
 
-
+        String[] arr={"a","1","b","2","c"};
+        List<String> digitList = Arrays.stream(arr).filter(x -> x.matches("\\d")).toList();
+        System.out.println(digitList);
+        List<String> isCharacter = Arrays.stream(arr).filter(x -> x.matches("[a-zA-Z]")).toList();
+        System.out.println(isCharacter);
+        
         String str = "1253679907c";
 
         boolean containsOnlyDigits = IntStream.range(0, str.length())

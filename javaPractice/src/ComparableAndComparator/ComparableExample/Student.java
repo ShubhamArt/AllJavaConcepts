@@ -31,11 +31,11 @@ public class Student implements Comparable<Student> {
     }
 
     public static void main(String[] args) {
-        List<Testing.Student> students = new ArrayList<>();
-        students.add(new Testing.Student("tina", 30));
-        students.add(new Testing.Student("gita", 22));
-        students.add(new Testing.Student("john", 20));
-        students.add(new Testing.Student("meena", 21));
+        List<Student> students = new ArrayList<>();
+        students.add(new Student("tina", 30));
+        students.add(new Student("gita", 22));
+        students.add(new Student("john", 20));
+        students.add(new Student("meena", 21));
         Collections.sort(students);
         System.out.println(students);
     }

@@ -1,5 +1,7 @@
 package generalQues;
 
+import java.util.Arrays;
+
 public class JavaCoding {
 
     public static void main(String[] args) {
@@ -19,6 +21,42 @@ public class JavaCoding {
             result = result * 10 + st.charAt(i) - '0';
         }
         System.out.println(result);
+        palindromeNumber();
+        System.out.println(anagramNumber());
+    }
+
+    private static boolean anagramNumber() {
+        int n1 = 123;
+        int n2 = 321;
+        String s1 = Integer.toString(n1);
+        String s2 = Integer.toString(n2);
+
+        if (s1.length() != s2.length())
+            return false;
+        char[] c1 = s1.toCharArray();
+        char[] c2 = s2.toCharArray();
+        Arrays.sort(c1);
+        Arrays.sort(c2);
+        return Arrays.equals(c1, c2);
+    }
+
+    private static void palindromeNumber() {
+        int n = 121;  // The number to check
+        int originalNumber = n;  // Save the original value of n
+        int reversedNumber = 0;
+
+        while (n > 0) {
+            int digit = n % 10;
+            reversedNumber = reversedNumber * 10 + digit;
+            n /= 10;
+        }
+
+        // Compare the original number with the reversed number
+        if (originalNumber == reversedNumber) {
+            System.out.println("Number " + originalNumber + " is Palindrome");
+        } else {
+            System.out.println("Number " + originalNumber + " is not Palindrome");
+        }
     }
 
     private static int printPower(int x, int n) {
@@ -40,8 +78,10 @@ public class JavaCoding {
     }
 
     private static void fact(int n) {
-        if (n == 0)
+        if (n == 0) {
+            System.out.println(1);
             return;
+        }
         int fact = 1;
         for (int i = 1; i <= n; i++) {
             fact = fact * i;

@@ -14,7 +14,8 @@ public class java8Practice {
         System.out.println(sum);
 
         //intermediate & terminal operations
-        Integer reduceSum = numbers.stream().filter(n -> n % 2 == 0).map(n -> n * 2).reduce(0, Integer::sum);
+        //Integer reduceSum = numbers.stream().filter(n -> n % 2 == 0).map(n -> n * 2).reduce(0, Integer::sum);
+        Integer reduceSum = numbers.stream().filter(n -> n % 2 == 0).map(n -> n * 2).reduce(0, (a,b)->a+b);
         System.out.println(reduceSum);
 
         //count the occurance of each character in string
@@ -104,6 +105,9 @@ public class java8Practice {
         int sumByMultiplySubstract = Arrays.stream(numsArr).map(n -> (n * 5) - 2).sum();
         System.out.println(sumByMultiplySubstract);
 
-
+        //find and print duplicate numbers in an array if it contains duplicate?
+        int[] arr1 ={2,4,2,3,1,5,5,7,8,3,1,5};
+        Arrays.stream(arr1).boxed().collect(Collectors.groupingBy(e->e,Collectors.counting())).
+                entrySet().stream().filter(e->e.getValue()>1).map(Map.Entry::getKey).forEach(System.out::println);
     }
 }

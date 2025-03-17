@@ -1,0 +1,31 @@
+Breakdown:
+^:
+
+This marks the beginning of the string. It ensures that the matching process starts from the beginning of the input.
+[a-zA-Z0-9._%+-]+:
+
+This part of the regex matches the local part of the email address (before the @ symbol).
+[a-zA-Z0-9]: This allows any alphanumeric character (letters a-z, A-Z and digits 0-9).
+._%+-: This part allows additional characters like dots (.), underscores (_), percent (%), plus (+), and minus (-) in the local part of the email.
+The + after the character class means that this group of characters should appear one or more times.
+@:
+
+This is the literal @ symbol, which separates the local part of the email address from the domain part.
+[a-zA-Z0-9.-]+:
+
+This part matches the domain name (the part after the @ symbol).
+[a-zA-Z0-9]: Allows alphanumeric characters for the domain name.
+.-: Allows dots (.) and hyphens (-) in the domain name.
+The + after the character class means that the domain name part should appear one or more times.
+\\.:
+
+This matches the dot (.) that separates the domain name from the top-level domain (TLD).
+Since . is a special character in regex (matches any character), we need to escape it using a backslash (\\.) to match a literal dot.
+[a-zA-Z]{2,}:
+
+This part matches the top-level domain (TLD) after the dot, such as .com, .org, .net, etc.
+[a-zA-Z]: This allows only alphabetic characters (a-z and A-Z).
+{2,}: This ensures that the TLD is at least two characters long. This is the minimum length for a valid TLD (e.g., .com, .org).
+$:
+
+This marks the end of the string. It ensures that the matching process ends at the end of the input.

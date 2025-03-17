@@ -1,5 +1,7 @@
 package AltimetricQuestion;
 
+import java.util.Arrays;
+
 public class SortStringWithoutAnyInbuiltMethod {
     public static void main(String[] args) {
         String input = "mbcadcafkkjj";
@@ -8,7 +10,8 @@ public class SortStringWithoutAnyInbuiltMethod {
         for (int i = 0; i < n; i++) {
             arr[i] = input.charAt(i);
         }
-
+        System.out.println(Arrays.toString(input.split("")));
+        System.out.println(Arrays.toString(arr));
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr.length - 1; j++) {
                 if (arr[j] > arr[j+1]) {
