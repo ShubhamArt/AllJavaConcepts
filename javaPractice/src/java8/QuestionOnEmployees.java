@@ -16,6 +16,10 @@ public class QuestionOnEmployees {
         employees1.add(new Employee(4, "yogesh", "phaltan", 8575.00, "Engine", 45,"male"));
         employees1.add(new Employee(8, "Amit", "phaltan", 8575.00, "Engine", 45,"male"));
 
+        //Write a program for fetch employee name whose salary is greater than 1000 and sort them.
+        List<String> filteredAndSortedNames = employees1.stream().filter(e -> e.getSalary() > 1000).map(Employee::getName).sorted().collect(Collectors.toList());
+        System.out.println(filteredAndSortedNames);
+
         //find all employees who lives in city 'pune' sort them by their name and print the names of employee
         employees1.stream().filter(e -> e.getCity().equalsIgnoreCase("pune"))
                 .sorted(Comparator.comparing(Employee::getName)).forEach(e -> System.out.println(e.getName()));

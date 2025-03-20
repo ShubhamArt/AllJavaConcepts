@@ -6,8 +6,8 @@ import java.util.HashMap;
 public class StringQuestionOnReGex {
     public static void main(String[] args) {
         String str = "I am  @shubham   *#%    attending1     interview";
-        str = str.replaceAll("[^a-zA-Z ]", "");
-        str = str.replaceAll("\\s+", " ").trim();
+        str = str.replaceAll("[^a-zA-Z ]", "");//This uses a regular expression to match and remove all characters that are not alphabetic letters (lowercase or uppercase) or spaces
+        str = str.replaceAll("\\s+", " ").trim();//This regular expression matches one or more consecutive whitespace characters (spaces, tabs, etc.) and replaces them with a single space.
         System.out.println("clean String :" + str);
         System.out.println("count of words in clean string :"+(str.split(" ")).length);
         HashMap<Character, Integer> map = new HashMap<>();
