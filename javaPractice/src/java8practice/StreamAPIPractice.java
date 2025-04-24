@@ -15,6 +15,17 @@ public class StreamAPIPractice {
         convertFirstCharcacterOfStringTotitleCase();
         extractAllLetterStartingWithVowels();
 
+        checkString("shubham");
+
+    }
+//write any function that will take string as argument and if string is null print "null
+// value not allowed" and if its not null convert string to upper case
+    private static void checkString(String input) {
+        Optional.ofNullable(input)
+                .ifPresentOrElse(
+                        str -> System.out.println(str.toUpperCase()),  // Convert to uppercase if not null
+                        () -> System.out.println("null value not allowed")  // Print message if null
+                );
     }
 
     private static void extractAllLetterStartingWithVowels() {

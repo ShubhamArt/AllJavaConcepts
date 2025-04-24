@@ -1,4 +1,4 @@
-package tekdiQuestion;
+package interviewQuestions.tekdiQuestion;
 
 public class SumOfNum {
     public static void main(String[] args) {

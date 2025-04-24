@@ -1,7 +1,7 @@
 package ThreadCreationWays;
 
 import java.util.concurrent.*;
-//if we want thread returns a result create thread by callable and future 
+//if we want thread returns a result create thread by callable and future
 public class UsingCallableAndFuture {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         ExecutorService executor = Executors.newSingleThreadExecutor();
