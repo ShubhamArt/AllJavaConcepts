@@ -1,5 +1,7 @@
 package FunctionalInterfaceExampleImpl;
 
+import java.util.function.BiFunction;
+
 public class Test {
     public static void main(String[] args) {
         // Using lambda expression to implement the Calculator interface
@@ -16,5 +18,14 @@ public class Test {
         // Using lambda expression for multiplication
         Calculator multiplication = (a, b) -> a * b;
         System.out.println("Multiplication: " + multiplication.calculate(4, 5));  // Output: 20
+
+        //add 2 numbers
+
+        // Lambda expression to add two integers
+        BiFunction<Integer, Integer, Integer> add = (a, b) -> a + b;
+
+        // Using the lambda
+        int result = add.apply(5, 3);
+        System.out.println("Sum: " + result);  // Output: Sum: 8
     }
 }
