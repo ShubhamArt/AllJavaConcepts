@@ -25,6 +25,11 @@ public class java8Practice {
         Map<String, Long> map = Arrays.stream(resultsString).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
         System.out.println(map);
 
+        Map<Character, Long> charCountMap = s.chars()
+                .mapToObj(c -> (char) c)
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+        System.out.println("Character frequencies using Streams: " + charCountMap);
 
         //find duplicate element from a string
         List<String> duplicateList = Arrays.stream(resultsString).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
